@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity</title>
+    <link rel="stylesheet" href="stylesheet3.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+        body {
+            background-color: #1b1b1b;
+            font-family: "Montserrat", sans-serif;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 40px;
+            background-color: #1b1b1b;
+            border-radius: 10px;
+        }
+        .main-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        .title {
+            font-size: 3rem;
+            margin: 20px 0;
+        }
+        .description {
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+        .input-group {
+            margin: 20px 0;
+        }
+        .input-group input {
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 6px;
+            border: 2px solid white;
+            background-color: #fff;
+            color: black;
+        }
+        .btn {
+            padding: 12px;
+            font-family: "Montserrat", sans-serif;
+            background-color: #161b22;
+            color: white;
+            border: 2px solid white;
+            border-radius: 6px;
+            font-size: 20px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #6b6be4;
+            border-color: #6b6be4;
+        }
+        .back-btn {
+            padding: 12px;
+            font-family: "Montserrat", sans-serif;
+            background-color: #161b22;
+            color: white;
+            border: 2px solid white;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .back-btn:hover {
+            background-color: #6b6be4;
+            border-color: #6b6be4;
+        }
+        #result {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main-title">Harness the power of the sun to save on your electricity bill!</div>
+        <div class="title">Electricity</div>
+        <div class="description">
+            Input your electricity bill below:<br>
+            By applying solar panels, your electricity cost can be reduced by 80%.
+        </div>
+        <div class="input-group">
+            <input type="number" id="electricity-bill" placeholder="Enter electricity bill">
+            <button class="btn" onclick="calculateSavings()">Calculate Savings</button>
+        </div>
+        <div id="result"></div>
+        <a href="index.html" class="back-btn">Back</a>
+    </div>
+
+    <script>
+        function calculateSavings() {
+            const bill = document.getElementById('electricity-bill').value;
+            const savings = bill * 0.8;
+            document.getElementById('result').innerText = `Savings: ₹${savings.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

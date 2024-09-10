@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Panel Calculator</title>
+    <link rel="stylesheet" href="stylesheet3.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+        body {
+            background-color: #1b1b1b;
+            font-family: "Montserrat", sans-serif;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 50px;
+            max-width: 600px;
+            margin: auto;
+            background-color: #2d2d2d;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .title {
+            font-size: 4rem;
+            margin: 20px 0;
+        }
+        .description {
+            font-size: 1.5rem;
+            margin: 20px 0;
+        }
+        .input-field, .button {
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .button {
+            background-color: #6b6be4;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #5a5ae0;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+        .back-btn {
+            padding: 12px;
+            font-family: "Montserrat", sans-serif;
+            background-color: #161b22;
+            color: white;
+            border: 2px solid white;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .back-btn:hover {
+            background-color: #6b6be4;
+            border-color: #6b6be4;
+        }
+    </style>
+</head>
+<body>
+    
+        <div class="title">Solar Panel Calculator</div>
+        <div class="description">
+            Enter the area and kilowatt rating of the solar panel to calculate the total cost and number of solar panels needed.
+        </div>
+        <form id="solar-form">
+            <input type="number" id="area" class="input-field" placeholder="Enter your area (sq ft)" required>
+            <input type="number" id="kw" class="input-field" placeholder="Enter KW" required>
+            <button type="button" class="button" onclick="calculate()">Calculate</button>
+        </form>
+        <div id="result" class="result"></div>
+        <a href="index.html" class="back-btn">Back</a>
+    </div>
+    
+    <script>
+        function calculate() {
+            // Get user input
+            var area = parseFloat(document.getElementById('area').value);
+            var KW = parseInt(document.getElementById('kw').value);
+            
+            // Initialize variables
+            var price = 0;
+            var numberOfPanels = 0;
+            var resultText = '';
+
+            // Determine price and number of panels based on KW and area
+            if (KW === 1) {
+                if (area >= 100 && area <= 200) {
+                    price = area * 1336.8;
+                    numberOfPanels = 4;
+                } else if (area > 200 && area <= 300) {
+                    price = area * 1336.8;
+                    numberOfPanels = 7;
+                } else if (area > 300 && area <= 500) {
+                    price = area * 1336.8;
+                    numberOfPanels = 16;
+                } else if (area > 500 && area <= 700) {
+                    price = area * 1336.8;
+                    numberOfPanels = 24;
+                } else if (area > 1000 && area <= 1200) {
+                    price = area * 1336.8;
+                    numberOfPanels = 32;
+                }
+            } else if (KW === 2) {
+                if (area >= 100 && area <= 200) {
+                    price = area * 1838.2;
+                    numberOfPanels = 4;
+                } else if (area > 200 && area <= 300) {
+                    price = area * 1838.2;
+                    numberOfPanels = 7;
+                } else if (area > 300 && area <= 500) {
+                    price = area * 1838.2;
+                    numberOfPanels = 16;
+                } else if (area > 500 && area <= 700) {
+                    price = area * 1838.2;
+                    numberOfPanels = 24;
+                } else if (area > 1000 && area <= 1200) {
+                    price = area * 1838.2;
+                    numberOfPanels = 32;
+                }
+            } else if (KW === 3) {
+                if (area >= 100 && area <= 200) {
+                    price = area * 1587.56;
+                    numberOfPanels = 4;
+                } else if (area > 200 && area <= 300) {
+                    price = area * 1587.56;
+                    numberOfPanels = 7;
+                } else if (area > 300 && area <= 500) {
+                    price = area * 1587.56;
+                    numberOfPanels = 16;
+                } else if (area > 500 && area <= 700) {
+                    price = area * 1587.56;
+                    numberOfPanels = 24;
+                } else if (area > 1000 && area <= 1200) {
+                    price = area * 1587.56;
+                    numberOfPanels = 32;
+                }
+            } else if (KW === 5) {
+                if (area >= 100 && area <= 200) {
+                    price = area * 1600.7;
+                    numberOfPanels = 4;
+                } else if (area > 200 && area <= 300) {
+                    price = area * 1600.7;
+                    numberOfPanels = 7;
+                } else if (area > 300 && area <= 500) {
+                    price = area * 1600.7;
+                    numberOfPanels = 16;
+                } else if (area > 500 && area <= 700) {
+                    price = area * 1600.7;
+                    numberOfPanels = 24;
+                } else if (area > 1000 && area <= 1200) {
+                    price = area * 1600.7;
+                    numberOfPanels = 32;
+                }
+            } else if (KW === 8) {
+                if (area >= 100 && area <= 200) {
+                    price = area * 1002.7;
+                    numberOfPanels = 4;
+                } else if (area > 200 && area <= 300) {
+                    price = area * 1002.7;
+                    numberOfPanels = 7;
+                } else if (area > 300 && area <= 500) {
+                    price = area * 1002.7;
+                    numberOfPanels = 16;
+                } else if (area > 500 && area <= 700) {
+                    price = area * 1002.7;
+                    numberOfPanels = 24;
+                } else if (area > 1000 && area <= 1200) {
+                    price = area * 1002.7;
+                    numberOfPanels = 32;
+                }
+            }
+            
+            // Display results
+            if (numberOfPanels > 0) {
+                resultText = `Total Price is: ${price.toFixed(2)}<br>Number of solar panels: ${numberOfPanels}`;
+            } else {
+                resultText = 'Please enter valid area and KW values.';
+            }
+            document.getElementById('result').innerHTML = resultText;
+        }
+    </script>
+</body>
+</html>

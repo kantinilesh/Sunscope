@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savings</title>
+    <link rel="stylesheet" href="stylesheet3.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+        body {
+            background-color: #1b1b1b;
+            font-family: "Montserrat", sans-serif;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            padding: 50px;
+        }
+        .title {
+            font-size: 4rem;
+            margin: 20px 0;
+        }
+        .description {
+            font-size: 1.5rem;
+            margin: 20px 0;
+        }
+        .input-group {
+            margin: 20px 0;
+        }
+        .input-group input {
+            padding: 10px;
+            font-size: 1rem;
+            margin: 10px;
+            border: 2px solid #6b6be4;
+            border-radius: 6px;
+            background-color: #161b22;
+            color: white;
+        }
+        .btn {
+            padding: 12px;
+            font-family: "Montserrat", sans-serif;
+            background-color: #161b22;
+            color: white;
+            border: 2px solid white;
+            border-radius: 6px;
+            font-size: 20px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #6b6be4;
+            border-color: #6b6be4;
+        }
+        .back-btn {
+            padding: 12px;
+            font-family: "Montserrat", sans-serif;
+            background-color: #161b22;
+            color: white;
+            border: 2px solid white;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .back-btn:hover {
+            background-color: #6b6be4;
+            border-color: #6b6be4;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Savings</div>
+        <div class="description">
+            Calculate your savings by installing solar panels.<br>
+            Learn how solar panels can help you save money.
+        </div>
+        <div class="input-group">
+            <input type="number" id="solar-potential" placeholder="Solar Potential (Watts/sq ft)">
+            <input type="number" id="rooftop-area" placeholder="Rooftop Area (sq ft)">
+        </div>
+        <button class="btn" onclick="calculateSavings()">Calculate Savings</button>
+        <div id="result"></div>
+        <a href="index.html" class="back-btn">Back</a>
+    </div>
+
+    <script>
+        function calculateSavings() {
+            const solarPotential = parseFloat(document.getElementById('solar-potential').value);
+            const rooftopArea = parseFloat(document.getElementById('rooftop-area').value);
+
+            if (!isNaN(solarPotential) && !isNaN(rooftopArea)) {
+                const totalPowerCapacity = solarPotential * rooftopArea;
+                const dailyElectricityProduction = totalPowerCapacity * 5;
+
+                document.getElementById('result').innerText = 
+                    `Total Power Capacity: ${totalPowerCapacity} Watts\n` +
+                    `Daily Electricity Production: ${dailyElectricityProduction} kWh`;
+            } else {
+                document.getElementById('result').innerText = "Please enter valid numbers.";
+            }
+        }
+    </script>
+</body>
+</html>
